@@ -1,4 +1,4 @@
-using Assignment2Group2;
+﻿using Assignment2Group2;
 using NUnit.Framework;
 
 namespace Assignment2Group2UntTest
@@ -13,6 +13,11 @@ namespace Assignment2Group2UntTest
             product = new Product(6, "Banana", 7, 2000);
 
         }
+        /// <summary>
+        /// yanping guo（Anna）
+        /// write ValidateProductId and ValidateProductName method
+        /// </summary>
+        /// <param name="prodId"></param>
 
         [TestCase(5)]
         [TestCase(10)]
@@ -30,6 +35,11 @@ namespace Assignment2Group2UntTest
             Assert.That(prodName, Is.Not.Null.And.Not.Empty.And.Not.EqualTo(" ").And.Not.EqualTo("\t"));
         }
 
+        /// <summary>
+        /// Ryjo Kollely Mathew  
+        /// wirte ValidateItemPrice and ValidateStockAmount method 
+        /// </summary>
+        /// <param name="itemPrice"></param>
         [TestCase(50)]
         [TestCase(100.01)]
         [TestCase(5000)]
