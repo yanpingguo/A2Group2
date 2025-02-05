@@ -30,6 +30,22 @@ namespace Assignment2Group2UntTest
             Assert.That(prodName, Is.Not.Null.And.Not.Empty.And.Not.EqualTo(" ").And.Not.EqualTo("\t"));
         }
 
-        
+        [TestCase(50)]
+        [TestCase(100.01)]
+        [TestCase(5000)]
+        public void ValidateItemPrice(double itemPrice)
+        {
+            Assert.That(itemPrice, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(5000));
+        }
+
+        [TestCase(59)]
+        [TestCase(40000)]
+        [TestCase(500000)]
+        public void ValidateStockAmount(int stockAmount)
+        {
+            Assert.That(stockAmount, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(500000));
+        }
+
+
     }
 }
