@@ -47,5 +47,42 @@ namespace Assignment2Group2UntTest
         }
 
 
+        // Meet Parmar
+        [TestCase(5)]
+        [TestCase(4689)]
+        [TestCase(49000)]
+        public void IncreaseStock_ShouldWorkProperly(int stockAmount)
+        {
+            // Arrange- Get initial stock
+            int initialStock = product.StockAmount;
+
+            // Act - Increase the stock
+            product.IncreaseStock(stockAmount);
+            int updatedStock = product.StockAmount;
+
+            // Assert - Verify the stock increased correctly
+            Assert.That(updatedStock, Is.EqualTo(initialStock + stockAmount));
+            Assert.That(updatedStock, Is.InRange(5, 500000));
+        }
+
+        [TestCase(66)]
+        [TestCase(899)]
+        [TestCase(370)]
+        public void DecreaseStock_ShouldWorkProperly(int stockAmount)
+        {
+            // Arrange - Ensure enough stock is available
+            product.IncreaseStock(1000);
+            int initialStock = product.StockAmount;
+
+            // Act - Decrease the stock
+            product.DecreaseStock(stockAmount);
+            int updatedStock = product.StockAmount;
+
+            // Assert - Verify the stock decreased correctly
+            Assert.That(updatedStock, Is.EqualTo(initialStock - stockAmount));
+            Assert.That(updatedStock, Is.InRange(5, 500000));
+        }
+
+
     }
 }
