@@ -62,15 +62,15 @@ namespace Assignment2Group2UntTest
         [TestCase(5000)]
         public void ValidateItemPrice_WhenGivenValidItemPrices_ShouldPass(double itemPrice)
         {
-            // Arrange: Define the minimum and maximum price range
-            const double minPrice = 5;
-            const double maxPrice = 5000;
+            // Arrange - Define the valid range
+            double inputValue = itemPrice;
+            bool expected = true;
 
             // Act: Store the test value 
-            double actualPrice = itemPrice;
-
+            bool actualPrice = product.VerifyItemPrice(inputValue);
+            
             // Assert: Verify that the item price falls within the valid range
-            Assert.That(actualPrice, Is.GreaterThanOrEqualTo(minPrice).And.LessThanOrEqualTo(maxPrice));
+            Assert.That(actualPrice, Is.EqualTo(expected));
         }
 
         /// <summary>
@@ -82,15 +82,15 @@ namespace Assignment2Group2UntTest
         [TestCase(500000)]
         public void ValidateStockAmount_WhenGivenValidStockAmounts_ShouldPass(int stockAmount)
         {
-            // Arrange: Define the minimum and maximum stock amount
-            const int minStock = 5;
-            const int maxStock = 500000;
+            // Arrange - Define invalid cases
+            int inputValue = stockAmount;
+            bool expected = true;
 
             // Act: Store the test value 
-            int actualStockAmount = stockAmount;
+            bool actual = product.VerifyStockAmount(inputValue);
 
             // Assert: Verify that the stock amount falls within the valid range
-            Assert.That(actualStockAmount, Is.GreaterThanOrEqualTo(minStock).And.LessThanOrEqualTo(maxStock));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
 
