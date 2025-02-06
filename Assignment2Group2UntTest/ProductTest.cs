@@ -21,22 +21,37 @@ namespace Assignment2Group2UntTest
         [TestCase(5)]
         [TestCase(10)]
         [TestCase(50000)]
-        public void ValidateProductId(int prodId)
-        {
-            Assert.That(prodId, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(50000));
+        public void ProductId_Input5And10And50000_Verify(int prodId)
+        {  
+            // Arrange - Define the valid range
+            int inputValue = prodId;
+            bool expected = true;
+
+            // Act - Check if the product ID is within the range
+            bool actual = product.VerifyProductID(inputValue);
+
+            // Assert - Verify the result
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [TestCase("Apple")]
         [TestCase("Orange")]
         [TestCase("Banana")]
-        public void ValidateProductName(string prodName)
+        public void ProductName_InputAppleAndOrangeAndBanana_Verify(string prodName)
         {
-            Assert.That(prodName, Is.Not.Null.And.Not.Empty.And.Not.EqualTo(" ").And.Not.EqualTo("\t"));
+            // Arrange - Define invalid cases
+            string inputValue = prodName;
+            bool expected = true;
+
+            // Act - Check if the product name is invalid
+            bool actual = product.VerifyProductName(inputValue);
+
+            // Assert - Verify the name is valid
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         /// <summary>
         /// Ryjo Kollely Mathew  
-        /// wirte ValidateItemPrice and ValidateStockAmount method 
         /// </summary>
         /// <param name="itemPrice"></param>
         [TestCase(50)]
