@@ -50,57 +50,49 @@ namespace Assignment2Group2UntTest
             Assert.That(actual, Is.EqualTo(expected));
         }
 
+
+        ///Ryjo Kollely Mathew
+
         /// <summary>
-        /// Ryjo Kollely Mathew  
-<<<<<<< HEAD
-=======
-       
-        /// Validates that the item price is within the valid range (5 to 5000 inclusive).
-        /// These test cases were chosen to cover edge cases and typical values:
-        
->>>>>>> 3651ee3 (Ryjo Kollely Mathew updated the code)
+        /// Validates that an item price falls within the acceptable range.
         /// </summary>
-        /// <param name="itemPrice">Price of the item to be validated.</param>
+        /// <param name="itemPrice">The item price to test.</param>
         [TestCase(50)]
         [TestCase(100.01)]
         [TestCase(5000)]
-<<<<<<< HEAD
-        public void ItemPrice_ShouldBeWithinValidRange(double itemPrice)
-=======
         public void ValidateItemPrice_WhenGivenValidItemPrices_ShouldPass(double itemPrice)
->>>>>>> 3651ee3 (Ryjo Kollely Mathew updated the code)
         {
-            // Arrange
+            // Arrange: Define the minimum and maximum price range
             const double minPrice = 5;
             const double maxPrice = 5000;
 
-            // Act & Assert
-            Assert.That(itemPrice, Is.GreaterThanOrEqualTo(minPrice).And.LessThanOrEqualTo(maxPrice));
+            // Act: Store the test value 
+            double actualPrice = itemPrice;
+
+            // Assert: Verify that the item price falls within the valid range
+            Assert.That(actualPrice, Is.GreaterThanOrEqualTo(minPrice).And.LessThanOrEqualTo(maxPrice));
         }
 
-
-
         /// <summary>
-        /// Validates that the stock amount is within the valid range (5 to 500,000 inclusive).
-        /// These test cases were selected to cover:
+        /// Validates that a stock amount falls within the acceptable range.
         /// </summary>
-        /// <param name="stockAmount">Stock amount to be validated.</param>
+        /// <param name="stockAmount">The stock amount to test.</param>
         [TestCase(59)]
         [TestCase(40000)]
         [TestCase(500000)]
-<<<<<<< HEAD
-        public void StockAmount_ShouldBeWithinValidRange(int stockAmount)
-=======
         public void ValidateStockAmount_WhenGivenValidStockAmounts_ShouldPass(int stockAmount)
->>>>>>> 3651ee3 (Ryjo Kollely Mathew updated the code)
         {
-            // Arrange
+            // Arrange: Define the minimum and maximum stock amount
             const int minStock = 5;
             const int maxStock = 500000;
 
-            // Act & Assert
-            Assert.That(stockAmount, Is.GreaterThanOrEqualTo(minStock).And.LessThanOrEqualTo(maxStock));
+            // Act: Store the test value 
+            int actualStockAmount = stockAmount;
+
+            // Assert: Verify that the stock amount falls within the valid range
+            Assert.That(actualStockAmount, Is.GreaterThanOrEqualTo(minStock).And.LessThanOrEqualTo(maxStock));
         }
+
 
 
 
