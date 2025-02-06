@@ -52,23 +52,56 @@ namespace Assignment2Group2UntTest
 
         /// <summary>
         /// Ryjo Kollely Mathew  
+<<<<<<< HEAD
+=======
+       
+        /// Validates that the item price is within the valid range (5 to 5000 inclusive).
+        /// These test cases were chosen to cover edge cases and typical values:
+        
+>>>>>>> 3651ee3 (Ryjo Kollely Mathew updated the code)
         /// </summary>
-        /// <param name="itemPrice"></param>
+        /// <param name="itemPrice">Price of the item to be validated.</param>
         [TestCase(50)]
         [TestCase(100.01)]
         [TestCase(5000)]
+<<<<<<< HEAD
         public void ItemPrice_ShouldBeWithinValidRange(double itemPrice)
+=======
+        public void ValidateItemPrice_WhenGivenValidItemPrices_ShouldPass(double itemPrice)
+>>>>>>> 3651ee3 (Ryjo Kollely Mathew updated the code)
         {
-            Assert.That(itemPrice, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(5000));
+            // Arrange
+            const double minPrice = 5;
+            const double maxPrice = 5000;
+
+            // Act & Assert
+            Assert.That(itemPrice, Is.GreaterThanOrEqualTo(minPrice).And.LessThanOrEqualTo(maxPrice));
         }
 
+
+
+        /// <summary>
+        /// Validates that the stock amount is within the valid range (5 to 500,000 inclusive).
+        /// These test cases were selected to cover:
+        /// </summary>
+        /// <param name="stockAmount">Stock amount to be validated.</param>
         [TestCase(59)]
         [TestCase(40000)]
         [TestCase(500000)]
+<<<<<<< HEAD
         public void StockAmount_ShouldBeWithinValidRange(int stockAmount)
+=======
+        public void ValidateStockAmount_WhenGivenValidStockAmounts_ShouldPass(int stockAmount)
+>>>>>>> 3651ee3 (Ryjo Kollely Mathew updated the code)
         {
-            Assert.That(stockAmount, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(500000));
+            // Arrange
+            const int minStock = 5;
+            const int maxStock = 500000;
+
+            // Act & Assert
+            Assert.That(stockAmount, Is.GreaterThanOrEqualTo(minStock).And.LessThanOrEqualTo(maxStock));
         }
+
 
 
         // Meet Parmar
