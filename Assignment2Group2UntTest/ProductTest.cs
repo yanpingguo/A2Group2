@@ -15,7 +15,6 @@ namespace Assignment2Group2UntTest
         }
         /// <summary>
         /// yanping guo（Anna）
-        /// write ValidateProductId and ValidateProductName method
         /// </summary>
         /// <param name="prodId"></param>
 
@@ -43,7 +42,7 @@ namespace Assignment2Group2UntTest
         [TestCase(50)]
         [TestCase(100.01)]
         [TestCase(5000)]
-        public void ValidateItemPrice(double itemPrice)
+        public void ItemPrice_ShouldBeWithinValidRange(double itemPrice)
         {
             Assert.That(itemPrice, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(5000));
         }
@@ -51,7 +50,7 @@ namespace Assignment2Group2UntTest
         [TestCase(59)]
         [TestCase(40000)]
         [TestCase(500000)]
-        public void ValidateStockAmount(int stockAmount)
+        public void StockAmount_ShouldBeWithinValidRange(int stockAmount)
         {
             Assert.That(stockAmount, Is.GreaterThanOrEqualTo(5).And.LessThanOrEqualTo(500000));
         }
